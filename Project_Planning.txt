@@ -1,0 +1,9 @@
+Project Planning Avalanche:
+KW 44: Data Collection
+KW 45/46: Data Cleaning/EDA
+KW 46: EDA
+KW 47: Modelling
+KW 48: Modelling
+KW 49: Evaluation
+KW 50: Paper
+KW 51: Paper & Video + GitHub Curation
