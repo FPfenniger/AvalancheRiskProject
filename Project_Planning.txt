@@ -1,8 +1,6 @@
 Project Planning Avalanche:
-KW 44: Data Collection
-KW 45/46: Data Cleaning/EDA
-KW 46: EDA
-KW 47: Modelling
+KW 46: RF & DL Data Prep
+KW 47: CNN Tuning
 KW 48: Modelling
 KW 49: Evaluation
 KW 50: Paper
