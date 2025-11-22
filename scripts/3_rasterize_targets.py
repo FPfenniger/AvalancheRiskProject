@@ -11,12 +11,12 @@ from tqdm import tqdm
 # 1. CONFIGURATION
 # ==========================================
 # Input Paths
-CLEANED_DATA_PATH = 'data/cleaned_data.parquet'
-GEOJSON_PATH = 'data/slf_boundaries_2020.json' # From the snippet provided earlier
-GRID_META_PATH = 'data/grids/grid_metadata.npz'
+CLEANED_DATA_PATH = '../data/cleaned_data.parquet'
+GEOJSON_PATH = '../data/slf_boundaries_2020.json' # From the snippet provided earlier
+GRID_META_PATH = '../data/grids/grid_metadata.npz'
 
 # Output
-OUTPUT_DIR = 'data/grids/targets'
+OUTPUT_DIR = '../data/grids/targets'
 
 # Grid Definitions (MUST match Script 1 exactly)
 LAT_MIN, LAT_MAX = 45.8, 47.9
