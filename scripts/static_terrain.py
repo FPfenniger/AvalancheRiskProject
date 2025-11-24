@@ -7,9 +7,9 @@ import matplotlib.pyplot as plt
 import os
 
 # 1. Configuration
-INPUT_DEM = 'data/swiss_dem.tif'  
-OUTPUT_FILE = 'data/grids/static_terrain.npy'
-OUTPUT_META = 'data/grids/grid_metadata.npz' 
+INPUT_DEM = '../data/swiss_dem.tif'  
+OUTPUT_FILE = '../data/grids/static_terrain.npy'
+OUTPUT_META = '../data/grids/grid_metadata.npz' 
 
 # Bounds
 LAT_MIN, LAT_MAX = 45.8, 47.9
