@@ -2,14 +2,13 @@ import pandas as pd
 import numpy as np
 from scipy.interpolate import griddata
 import os
-from tqdm import tqdm  # For progress bar
+from tqdm import tqdm
 
-# ==========================================
-# 1. Configuration
-# Input paths
-CLEANED_DATA_PATH = 'data/cleaned_data.parquet'
-GRID_META_PATH = 'data/grids/grid_metadata.npz'
-OUTPUT_DIR = 'data/grids/dynamic'
+
+# Inputs 
+CLEANED_DATA_PATH = '../data/cleaned_data.parquet'
+GRID_META_PATH = '../data/grids/grid_metadata.npz'
+OUTPUT_DIR = '../data/grids/dynamic'
 
 # Define the list of dynamic features to interpolate
 # These act as the input channels for your CNN

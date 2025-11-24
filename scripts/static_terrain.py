@@ -120,9 +120,8 @@ np.savez('data/grids/grid_metadata.npz',
          dem_stats=(dem_mean, dem_std),
          slope_stats=(slope_mean, slope_std))
 
-print(f"\nSUCCESS! Static tensor saved to: {OUTPUT_FILE}")
-print(f"Tensor Shape: {static_tensor.shape}")
-print(f"Channels: Elevation(Norm), Slope(Norm), Aspect(Sin), Aspect(Cos)")
+static_flipped = np.flipud(static_tensor)
+np.save('../data/grids/static_terrain.npy', static_flipped)
 
 # --- Visualization Check ---
 plt.figure(figsize=(15, 5))
