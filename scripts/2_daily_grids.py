@@ -60,8 +60,6 @@ def generate_daily_grids():
         'RH',             
         'min_ccl_pen',        
         'relative_load_3d',   
-        'VW',  # Wind Speed
-        'DW'   # Wind Direction
     ]
 
     # 1. Setup
@@ -85,6 +83,9 @@ def generate_daily_grids():
         df['wind_u'] = -df['VW'] * np.sin(wd_rad)
         df['wind_v'] = -df['VW'] * np.cos(wd_rad)
         dynamic_features.extend(['wind_u', 'wind_v'])
+    
+    # Final feature list (use wind_u/wind_v instead of VW/DW)
+    dynamic_features = dynamic_features + ['wind_u', 'wind_v']
 
     # 3. Loop through days
     daily_groups = df.groupby('datum')
