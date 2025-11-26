@@ -3,6 +3,7 @@ import numpy as np
 from scipy.interpolate import griddata
 import os
 from tqdm import tqdm
+import shutil
 
 
 def interpolate_day(day_df, grid_lat, grid_lon, features):
@@ -82,10 +83,9 @@ def generate_daily_grids():
         wd_rad = np.deg2rad(df['DW'])
         df['wind_u'] = -df['VW'] * np.sin(wd_rad)
         df['wind_v'] = -df['VW'] * np.cos(wd_rad)
-        dynamic_features.extend(['wind_u', 'wind_v'])
     
     # Final feature list (use wind_u/wind_v instead of VW/DW)
-    dynamic_features = dynamic_features + ['wind_u', 'wind_v']
+    features_to_use = dynamic_features + ['wind_u', 'wind_v']
 
     # 3. Loop through days
     daily_groups = df.groupby('datum')
@@ -104,14 +104,14 @@ def generate_daily_grids():
                 continue
                 
             # Run Interpolation
-            daily_tensor = interpolate_day(group, grid_lat_mesh, grid_lon_mesh, dynamic_features)
+            daily_tensor = interpolate_day(group, grid_lat_mesh, grid_lon_mesh, features_to_use)
             np.savez_compressed(save_path, data=daily_tensor.astype(np.float32))
             
         except Exception as e:
             print(f"Failed on {date}: {e}")
             error_count += 1
 
-    print(f"\n✓ Processing complete.")
+    print(f"\n✓ Processing complete: Complete. Saved {len(features_to_use)}-channel grids to {output}")
     print(f"Errors: {error_count}")
     print(f"Output directory: {output}")
 

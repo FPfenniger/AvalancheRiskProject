@@ -7,16 +7,7 @@ from rasterio.transform import from_bounds
 from shapely.geometry import Point
 import os
 from tqdm import tqdm
-
-import pandas as pd
-import numpy as np
-import geopandas as gpd
-import rasterio
-from rasterio import features
-from rasterio.transform import from_bounds
-from shapely.geometry import Point
-import os
-from tqdm import tqdm
+import shutil
 
 
 def rasterize_targets():
