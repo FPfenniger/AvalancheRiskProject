@@ -77,7 +77,7 @@ def rasterize_targets():
             continue
 
         shapes = []
-        region_danger = group.groupby('mapped_region_id')['danger_level'].max() # Take max danger level if multiple stations 
+        region_danger = group.groupby('mapped_region_id')['dangerLevel'].max() # Take max danger level if multiple stations 
         for region_id, danger_level in region_danger.items():
             poly = gdf_regions[gdf_regions['region_id'] == region_id].geometry.values[0]
             shapes.append((poly, danger_level))
