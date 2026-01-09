@@ -52,7 +52,7 @@ AvalancheRiskProject/
 3. **3_BaselineModels.ipynb** - Implementation of traditional machine learning baselines (e.g., Random Forest) for comparison
 4. **4_GridDataPreparation.ipynb** - Preparation of spatial grid data for CNN-based models
 5. **5_DLModels.ipynb** - Training of deep learning models including CNN and ConvLSTM architectures
-6. **6_Evaluation.ipynb** - Comprehensive evaluation and comparison of all models
+6. **6_Evaluation.ipynb** - Comprehensive evaluation 
 7. **Verification_NB.ipynb** - Verification and validation of Grid Preparatoin
 
 ## Installation
